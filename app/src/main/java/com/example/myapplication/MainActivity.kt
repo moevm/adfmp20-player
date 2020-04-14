@@ -1,11 +1,12 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import api.Api
+import androidx.appcompat.app.AppCompatActivity
 import audio.Audio
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,7 +31,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonOpen.setOnClickListener{
-            Api().getTrackListVk(115080501);
+            //Api().getTrackListVk(115080501);
+            val intent = Intent(this, PlayerActivity::class.java)
+            startActivity(intent)
         }
 
     }
