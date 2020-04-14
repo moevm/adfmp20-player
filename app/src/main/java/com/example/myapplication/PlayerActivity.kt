@@ -11,9 +11,6 @@ class PlayerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player)
 
+    }
 
-    }
-    fun playButton(v: View) {
-        print("++");
-    }
 }
