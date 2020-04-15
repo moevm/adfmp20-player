@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,9 +11,12 @@
     tools:context=".PlayerActivity">
 
     <LinearLayout
+        android:id="@+id/blockClosePlayer"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:gravity="center">
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp">
 
         <ImageView
             android:layout_width="20dp"
@@ -22,16 +25,25 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="431dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/blockClosePlayer"
+        tools:layout_editor_absoluteX="10dp">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/default_album_image" />
 
         <SeekBar
+            android:id="@+id/durationTrack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/MySeekBar"
-
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             />
 
 
@@ -59,16 +71,25 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp"
+        >
 
         <Button
+            android:id="@+id/buttonPrev"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@drawable/prev" />
 
         <Button
+            android:id="@+id/buttonActive"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="50dp"
@@ -76,6 +97,7 @@
             android:background="@drawable/play" />
 
         <Button
+            android:id="@+id/buttonNext"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@drawable/next" />
@@ -83,11 +105,13 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:gravity="end"
 
-        >
+        android:gravity="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="10dp">
 
         <Button
             android:layout_width="30dp"
@@ -99,4 +123,4 @@
     </LinearLayout>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
