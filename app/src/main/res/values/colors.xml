@@ -8,4 +8,9 @@
 
     <color name = "colorMain">#FF2E54</color>
     <color name = "colorMain1">#F97C92</color>
+    <color name = "colorBlack3">#303030</color>
+    <color name = "colorBlack2">#252525</color>
+
+    <color name = "colorWhite1">#f3f3f3</color>
+
 </resources>

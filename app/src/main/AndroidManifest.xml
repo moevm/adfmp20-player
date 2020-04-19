@@ -17,7 +17,9 @@
         <activity
             android:name=".PlayerActivity"
             android:theme="@style/AppDefaultPage" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppDefaultPage"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

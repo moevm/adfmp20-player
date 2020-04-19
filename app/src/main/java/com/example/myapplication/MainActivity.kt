@@ -30,11 +30,16 @@ class MainActivity : AppCompatActivity() {
             }
         }*/
 
-        buttonOpen.setOnClickListener{
+       /* buttonOpen.setOnClickListener{
             //Api().getTrackListVk(115080501);
-            val intent = Intent(this, PlayerActivity::class.java)
-            startActivity(intent)
-        }
+
+            /*val intent = Intent(this, PlayerActivity::class.java)
+            startActivity(intent)*/
+
+            val intent = Intent(this, VkNoAuthActivity::class.java)
+            startActivity(intent);
+
+        }*/
 
     }
 }
