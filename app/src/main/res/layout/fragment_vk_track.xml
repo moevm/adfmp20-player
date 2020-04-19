@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VkTrackFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="46dp"
+            android:layout_height="46dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Малютка"
+
+                android:textSize="15dp"
+                android:textColor="@color/colorWhite1"
+
+                />
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Xassa"
+
+                android:textSize="12dp"
+                android:textColor="@color/colorGray1"
+                />
+            
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+
+            android:text="3:33"
+
+            android:textSize="12dp"
+            android:textColor="@color/colorGray1"
+            android:gravity="center"
+
+            />
+
+    </LinearLayout>
+</FrameLayout>

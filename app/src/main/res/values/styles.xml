@@ -6,6 +6,25 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
+    <style name="AppDefaultPage" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <style name="PlayerNameTrack">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">23dp</item>
+
+    </style>
+
+    <style name = "PlayerNameArtist">
+        <item name="android:textColor">#909090</item>
+        <item name="android:textSize">16dp</item>
+
+    </style>
+
+
 
 </resources>
