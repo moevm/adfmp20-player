@@ -2,6 +2,7 @@ package com.example.myapplication.vk
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +33,9 @@ class ListVkFragment: Fragment(){
 
         val myAdapter = ListAdapter(Audio.getList(), object : ListAdapter.Callback {
             override fun onItemClicked(item: Track) {
-                //TODO Сюда придёт элемент, по которому кликнули. Можно дальше с ним работать
+
+                Audio.setTrackByUrl(item.urlTrack);
+
             }
         })
         listRecycle.adapter = myAdapter;

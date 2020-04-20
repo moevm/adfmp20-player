@@ -96,9 +96,25 @@ object Audio {
         position = index;
 
         update();
+    }
 
+    public fun setTrackByUrl(url: String) {
+
+        for((index, value) in listSong.withIndex()) {
+
+            if (value.urlTrack == url) {
+
+                position = index;
+                break;
+            }
+
+        }
+
+        update();
 
     }
+
+
     private fun update(){
 
 
