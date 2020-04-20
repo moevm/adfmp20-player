@@ -2,14 +2,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="60dp"
     tools:context=".VkTrackFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
         android:gravity="center_vertical">
         <ImageView
+            android:id="@+id/playerIcoTrack"
             android:layout_width="46dp"
             android:layout_height="46dp"/>
 
@@ -21,6 +22,7 @@
             >
             
             <TextView
+                android:id="@+id/playerTitleTrack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Малютка"
@@ -38,15 +40,18 @@
 
                 android:textSize="12dp"
                 android:textColor="@color/colorGray1"
+                android:id="@+id/playerArtistTrack"
                 />
             
         </LinearLayout>
 
         <TextView
+
+            android:id="@+id/playerDurationTrack"
+
             android:layout_width="50dp"
             android:layout_height="match_parent"
 
-            android:text="3:33"
 
             android:textSize="12dp"
             android:textColor="@color/colorGray1"

@@ -20,13 +20,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <fragment
-            android:id="@+id/fragment7"
-            android:name="com.example.myapplication.VkAuthFragment"
+            android:id="@+id/fragment"
+            android:name="com.example.myapplication.vk.ListVkFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment3"
-             />
+            app:layout_constraintTop_toBottomOf="@+id/fragment3" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

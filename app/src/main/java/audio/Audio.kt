@@ -120,6 +120,9 @@ object Audio {
         listSong = songs;
         setTrackByIndex(1);
     }
+    public fun getList(): List<Track> {
+        return listSong;
+    }
 
     public fun isActive(): Boolean {
         return mediaPlayer.isPlaying;
