@@ -38,7 +38,7 @@
             android:src="@drawable/default_album_image" />
 
         <SeekBar
-            android:id="@+id/durationTrack"
+            android:id="@+id/seekBarPlayer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/MySeekBar"
@@ -54,12 +54,14 @@
             >
 
             <TextView
+                android:id="@+id/currentDuration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:11"
                 android:textColor="@color/colorGray1" />
 
             <TextView
+                android:id="@+id/durationTrack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -79,6 +81,7 @@
             >
 
             <TextView
+                android:id="@+id/titleTrack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Test name of track"
@@ -88,6 +91,7 @@
              />
 
             <TextView
+                android:id="@+id/artistTrack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Test name of track"
@@ -105,13 +109,11 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="40dp"
-        >
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/buttonPrev"
@@ -125,7 +127,7 @@
             android:layout_height="45dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:background="@drawable/play" />
+             />
 
         <Button
             android:id="@+id/buttonNext"

@@ -1,28 +1,80 @@
 package audio
 
+
+import android.media.MediaActionSound
 import android.media.MediaPlayer
 import android.util.Log
+import bus.Bus
+import org.jetbrains.anko.uiThread
+import java.util.*
+import kotlin.concurrent.schedule
+
+
+/**
+ * changeActivePlayer
+ * changeTrackPlayer
+ *
+ * */
 
 object Audio {
+
 
     private val mediaPlayer = MediaPlayer();
     private var position: Int = 0;
     private lateinit var listSong: List<Track>;
 
 
+    init {
+        mediaPlayer.setOnSeekCompleteListener {
+            Log.v("SeekTime", "${mediaPlayer.currentPosition}");
+        }
+    }
+
     public fun set(url: String) {
+        val trackActive = this.mediaPlayer.isPlaying;
+
+        this.pause();
+        mediaPlayer.reset();
+
+
         this.mediaPlayer.setDataSource(url);
-        this.mediaPlayer.prepare();
+        this.mediaPlayer.prepareAsync();
+
+        Bus.emit("changeTrackPlayer");
+
+        Log.v("Play", "0")
+        if (trackActive) {
+            Log.v("Play", "-")
+            Timer().schedule(1000) {
+                Log.v("Play", "+")
+                play();
+            }
+
+        }
+
     }
     public fun set(elem: Track) {
-        this.mediaPlayer.setDataSource(elem.urlTrack);
-        this.mediaPlayer.prepare();
+
+
+        this.set(elem.urlTrack);
+
+
+
+    }
+    public fun toggle() {
+        if (this.mediaPlayer.isPlaying){
+            this.pause();
+        } else {
+            this.play();
+        }
     }
     public fun play() { 
         this.mediaPlayer.start();
+        Bus.emit("changeActivePlayer");
     }
     public fun pause() {
         this.mediaPlayer.pause();
+        Bus.emit("changeActivePlayer");
     }
     public fun loop(value: Boolean = !mediaPlayer.isLooping) {
         mediaPlayer.isLooping = value;
@@ -32,21 +84,62 @@ object Audio {
 
         return listSong[position];
     }
+    public fun currentDuration(): Int {
+        return mediaPlayer.currentPosition / 1000;
+    }
+    public fun durationTrack(): Int {
+        return mediaPlayer.duration / 1000;
+    }
 
     public fun setTrackByIndex(index: Int) {
 
         position = index;
 
-        set(currentElem())
+        update();
 
 
     }
+    private fun update(){
 
-    public fun next(){}
-    public fun prev(){}
+
+
+        this.set(this.currentElem());
+    }
+
+    public fun next(){
+        checkPosition(1);
+
+        update();
+
+    }
+    public fun prev(){
+        checkPosition(-1);
+        update();
+    }
     public fun setList(songs: List<Track>){
         listSong = songs;
-        setTrackByIndex(0);
+        setTrackByIndex(1);
+    }
+
+    public fun isActive(): Boolean {
+        return mediaPlayer.isPlaying;
+    }
+    public fun setCurrentTimeByProgress(progress: Int){
+
+        var durationTrack   = (mediaPlayer.duration / 1000).toInt();
+
+        var newCurrentTime:Int = (durationTrack * (progress.toFloat() / 100)).toInt() * 1000;
+
+
+        mediaPlayer.seekTo(newCurrentTime)
+    }
+
+    private fun checkPosition(a: Int){
+        this.position += a;
+
+        if (position >= listSong.size) position = 0;
+        if (position < 0) position = (listSong.size - 1);
+
     }
 
 }

@@ -12,6 +12,7 @@ import audio.Audio
 import audio.TrackList
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 import java.net.URL
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -46,6 +47,7 @@ class SplashScreenActivity : AppCompatActivity() {
             val vkPage = Intent(this, MainActivity::class.java);
             startActivity(vkPage);
         } else {
+
             doAsync {
 
                 Log.v("TEST", "+1");
@@ -57,12 +59,20 @@ class SplashScreenActivity : AppCompatActivity() {
 
                 Audio.setList(songList.songs);
 
-                Audio.play();
+
+
+                uiThread {
+                    openVkActivity();
+                }
 
             }
         }
 
 
+    }
+    fun openVkActivity(){
+        val vkPage = Intent(this, MainActivity::class.java);
+        startActivity(vkPage);
     }
 
 
