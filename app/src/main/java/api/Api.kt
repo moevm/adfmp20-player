@@ -1,18 +1,22 @@
-package api
+/*package api
 
 import android.util.Log
+
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import java.net.URL
 
-class Api {
+object Api {
+
 
     fun getTrackListVk(id: Int, page: Int = 0) {
 
-        Log.v("TEST", "test");
+        Log.v("TEST", "+0");
 
-        doAsync {
-            var test = URL("https://api-music.jenesius.com/api/songs/lists/$id/$page").readText()
+         doAsync {
+
+            Log.v("TEST", "+1");
+            var test = URL("https://api-music.jenesius.com/api/songs/lists/v2/$id/$page").readText()
 
             var songList =  Gson().fromJson(test, TrackList::class.java);
 
@@ -20,16 +24,15 @@ class Api {
 
             for(elem in songList.songs) {
 
-                Log.v("Test1", elem.id);
+                Log.v("Test1", elem.index);
             }
 
+
         }
+
+        Log.v("TEST", "+2");
 
     }
 }
 
-
-
-class TrackList(val songs: List<Track>)
-
-class Track(val id: String)
+*/

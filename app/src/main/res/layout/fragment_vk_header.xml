@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VkHeaderFragment">
+    tools:context=".VkHeaderFragment"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,38 +12,39 @@
         android:padding="7dp"
 
         android:background="@color/colorBlack3"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:radius = "11dp"
-            android:background="#ffffff"
+            android:background="@drawable/round_outline"
             android:gravity="center_vertical"
+
+
             >
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="18dp"
                 android:src="@drawable/search"/>
 
+
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/vkHeaderInput"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:hint="Поиск по музыке"
-                android:textSize="16dp"
-                 />
+                android:textSize="14dp"
+                android:focusable="true" android:focusableInTouchMode="true"
+                >
 
-            <ToggleButton
-                android:id="@+id/toggleButtonOnline"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:textOn="Offline"
-                android:textOff="Online"
+            </EditText>
 
-                android:textSize="16px" />
+
 
 
         </LinearLayout>

@@ -2,31 +2,48 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="60dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".VkTrackFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
         android:gravity="center_vertical">
-        <ImageView
-            android:layout_width="46dp"
-            android:layout_height="46dp"/>
+
+
+
+
+            <ImageView
+                android:id="@+id/playerIcoTrack"
+
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                />
+
+
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
+            android:gravity="center_vertical"
             >
             
             <TextView
+                android:id="@+id/playerTitleTrack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Малютка"
 
                 android:textSize="15dp"
                 android:textColor="@color/colorWhite1"
+
+                android:singleLine="true"
 
                 />
             
@@ -38,15 +55,20 @@
 
                 android:textSize="12dp"
                 android:textColor="@color/colorGray1"
+                android:id="@+id/playerArtistTrack"
+
+                android:singleLine="true"
                 />
             
         </LinearLayout>
 
         <TextView
+
+            android:id="@+id/playerDurationTrack"
+
             android:layout_width="50dp"
             android:layout_height="match_parent"
 
-            android:text="3:33"
 
             android:textSize="12dp"
             android:textColor="@color/colorGray1"

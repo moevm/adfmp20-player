@@ -1,14 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VkNoAuthFragment">
+    tools:context=".VkNoAuthFragment"
 
-    <!-- TODO: Update blank fragment layout -->
+    android:orientation="vertical"
+    android:gravity="center"
+
+    android:background="@color/colorBlack2"
+
+    android:padding="14dp"
+    >
+
+
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ввведите ID Вконтакте"
+
+        android:textColor="@color/colorBlack4"
+        />
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="vertical"
+
+
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp">
+            <EditText
+
+                android:id="@+id/inputIdVk"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+
+                android:paddingLeft="10dp"
+
+                android:ems="10"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+
+                android:inputType="text"
+                android:background="@color/colorBlack4"
+
+
+                />
+
+            <Button
+                android:id="@+id/buttonSignIn"
+                android:layout_width="100dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="6dp"
+
+
+                android:background="#dedede"
+                android:text="Войти"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <TextView
+
+            android:textSize="14sp"
+            android:id="@+id/errorAuthText"
+            android:layout_marginTop="3px"
+            android:layout_marginBottom="3px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff0000"/>
+
+    </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="или"
 
-</FrameLayout>
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/colorBlack4"
+        />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+
+        android:background="@color/colorBlack4"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:id="@+id/buttonAuthVk"
+        >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/vk"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Войти через Вконтакте"
+            android:textColor="@color/colorWhite1"
+            android:textSize="13dp"
+
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:layout_marginRight="55dp"
+
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

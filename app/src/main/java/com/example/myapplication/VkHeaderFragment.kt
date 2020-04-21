@@ -1,10 +1,16 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import audio.Audio
+import kotlinx.android.synthetic.main.fragment_vk_header.view.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +40,28 @@ class VkHeaderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vk_header, container, false)
+        var view =  inflater.inflate(R.layout.fragment_vk_header, container, false);
+
+
+
+        view.vkHeaderInput.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(
+                s: CharSequence, start: Int,
+                count: Int, after: Int
+            ) {
+            }
+
+            override fun onTextChanged(
+                s: CharSequence, start: Int,
+                before: Int, count: Int
+            ) {
+                Audio.setFilter(s.toString());
+            }
+        })
+
+        return view;
     }
 
     companion object {

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ErrorAuthActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:gravity="center_horizontal"
+
+        android:paddingTop="20dp"
+
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+
+
+            android:background="@drawable/warning"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ну и где музыка?"
+
+            android:textColor="#212121"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:textSize="20sp"
+
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Профиль ВКонтакте должен быть открытым"
+            android:layout_marginBottom="10dp"
+
+            android:textFontWeight="300"
+            android:textSize="16dp"
+
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Аудиозапии так же должны быть видны всем"
+
+            android:textFontWeight="300"
+            android:textSize="16dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            android:layout_marginBottom="20dp"
+            />
+
+        <Button
+            android:id="@+id/closeErrorPopup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Повторить"
+            android:textColor="#fff"
+            android:background="#FF2857"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

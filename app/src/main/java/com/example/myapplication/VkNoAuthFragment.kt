@@ -1,10 +1,21 @@
 package com.example.myapplication
 
+import `class`.StorageVK
+import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import com.vk.api.sdk.VK
+import com.vk.api.sdk.auth.VKAccessToken
+import com.vk.api.sdk.auth.VKAuthCallback
+import kotlinx.android.synthetic.main.fragment_vk_no_auth.*
+import kotlinx.android.synthetic.main.fragment_vk_no_auth.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +45,49 @@ class VkNoAuthFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vk_no_auth, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_vk_no_auth, container, false);
+
+
+        view.inputIdVk.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(
+                s: CharSequence, start: Int,
+                count: Int, after: Int
+            ) {
+            }
+
+            override fun onTextChanged(
+                s: CharSequence, start: Int,
+                before: Int, count: Int
+            ) {
+                view.errorAuthText.text = "";
+            }
+        })
+
+
+
+        view.buttonAuthVk.setOnClickListener {
+            activity?.let { it1 -> VK.login(it1, arrayListOf() ) }
+        }
+
+
+        view.buttonSignIn.setOnClickListener {
+            Log.v("a", view.inputIdVk.text.toString());
+
+            if (view.inputIdVk.text.toString().length === 0) {
+                Log.v("error", "+");
+                view.errorAuthText.text = "Id пользователя не может быть пустым!";
+            } else {
+                var a: Int = view.inputIdVk.text.toString().toInt();
+                StorageVK.setId(a);
+
+                val vkPage = Intent(this.activity, SplashScreenActivity::class.java);
+                startActivity(vkPage);
+            }
+        }
+        return view;
     }
 
     companion object {
