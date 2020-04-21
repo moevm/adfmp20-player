@@ -36,6 +36,7 @@ object Audio {
                 mediaPlayer.start()
             }
             Bus.emit("changeActivePlayer");
+            Bus.emit("changeTrackPlayer");
         }
 
         mediaPlayer.setOnCompletionListener{
@@ -65,7 +66,7 @@ object Audio {
         this.mediaPlayer.prepareAsync();
 
 
-        Bus.emit("changeTrackPlayer");
+
 
     }
     public fun set(elem: Track) {
@@ -155,11 +156,11 @@ object Audio {
         update();
     }
     public fun setList(songs: List<Track>){
-
+        println("+@")
         listSong = songs;
 
         setTrackByIndex(0);
-
+        println("+1")
     }
     public fun getList(): List<Track> {
         if (filter == null)

@@ -86,6 +86,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
                 val response = httpClient.newCall(request).execute()
 
+                println("+!!");
 
                 if (response.isSuccessful) {
                     val body = response.body?.string()
