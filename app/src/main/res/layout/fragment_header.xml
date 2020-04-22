@@ -17,6 +17,7 @@
             android:gravity="center"
             >
             <ImageView
+                android:visibility="invisible"
                 android:id="@+id/buttonMenu"
                 android:layout_marginTop="3dp"
                 android:layout_width="20dp"
